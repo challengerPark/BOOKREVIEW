@@ -1,5 +1,8 @@
 package com.eco.test.review;
 
-public class ReviewDaoImpl {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ReviewDaoImpl implements ReviewDao {
 
 }

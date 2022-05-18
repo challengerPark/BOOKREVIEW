@@ -15,11 +15,13 @@ import lombok.NoArgsConstructor;
 public class ReviewVo {
 
 	private int reviewNo;
-	private String reviewName;
-	private String feelGood;
-	private String content;
-	private String feel;
-	private Date createDate;
-	private char check;
+	private int bookNo;
+	private int memberNo;
+	private String reviewTitle;
+	private String reviewImportent;
+	private String reviewContent;
+	private String reviewFeel;
+	private Date reviewDate;
+	private int checkNo;
 	
 }

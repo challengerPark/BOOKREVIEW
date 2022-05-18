@@ -1,5 +1,8 @@
 package com.eco.test.book;
 
-public class BookServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookServiceImpl implements BookService {
 
 }

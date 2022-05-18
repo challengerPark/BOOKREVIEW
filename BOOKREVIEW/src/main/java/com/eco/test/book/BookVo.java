@@ -12,9 +12,12 @@ import lombok.NoArgsConstructor;
 public class BookVo {
 
 	private int bookNo;
+	private String bookImg;
 	private String bookName;
-	private String creater;
+	private String bookWriter;
 	private String company;
+	private String bookInf;
+	
 	
 	
 }

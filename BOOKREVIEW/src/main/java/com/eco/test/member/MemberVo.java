@@ -14,10 +14,12 @@ public class MemberVo {
 	
 	private int memberNo;
 	private String memberId;
-	private String password;
-	private String year;
-	private String classNo;
-	private String name;
-	private char level;
+	private String memberPwd;
+	private String memberName;
+	private String memberGrade;
+	private String memberClass;
+	private String memberClassNo;
+	private String memberImg;
+	private int levelNo;
 	
 }

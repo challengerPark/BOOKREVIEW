@@ -1,5 +1,8 @@
 package com.eco.test.book;
 
-public class BookDaoImpl {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BookDaoImpl implements BookDao {
 
 }

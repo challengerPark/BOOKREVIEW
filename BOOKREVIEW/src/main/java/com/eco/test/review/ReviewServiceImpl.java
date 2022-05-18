@@ -1,5 +1,8 @@
 package com.eco.test.review;
 
-public class ReviewServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
 
 }
