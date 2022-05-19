@@ -4,6 +4,7 @@
 <configuration>
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="false"/>
 	</settings>
 	
 	<typeAliases>
@@ -12,11 +13,7 @@
 		<typeAlias type="com.eco.test.review.ReviewVo" alias="review" />
 	</typeAliases>
 	
-	<mappers>
-		<mapper resource="/mappers/book-mapper.xml" />
-		<mapper resource="/mappers/member-mapper.xml" />
-		<mapper resource="/mappers/review-mapper.xml" />
-	</mappers>
+
 	
 </configuration>
 	
