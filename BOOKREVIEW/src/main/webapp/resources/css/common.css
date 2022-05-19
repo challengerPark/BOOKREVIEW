@@ -1,0 +1,166 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/*<<로고임시*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+li,
+ol,
+ul {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #333;
+}
+
+h1 {
+    font-size: 3.6rem;
+    color: #dfa25f;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 3px;
+}
+
+
+/*로고를 위한 임시 설정입니다. 로고폰트로 임시 사용하겠습니다*/
+
+.fontstyle1 {
+    font-size: 1.7rem;
+    color: black;
+}
+
+.fontstyle2 {
+    font-size: 1.7rem;
+    color: #666;
+}
+
+.fontstyle3 {
+    font-size: 1.7rem;
+    color: #ADADAD;
+}
+
+.fontstyle4 {
+    font-size: 2.3rem;
+    color: black;
+    margin: 0px 0px 70px 0px;
+}
+
+
+/*fontstyle4: article-menu 작성용 fontsytle 사용가능 수정금지*/
+
+.fontstyle10 {
+    font-size: 1.7rem;
+    color: black;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+/*fontsytle10는 영어 입력용 폰트입니다. 나머지는 sans KR 일괄적용이니 참고 부탁드립니다. 또한, 이후 heading을 제외한 영문 폰트 추가시 fontstyle10-n번 처리해주시면 감사하겠습니다*/
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.innerwrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    ;
+}
+
+
+/*innerwrap div는 article 안에 max-width:1200px을 적용하기 위한 id 입니다. wrap에 max-width를 적용할 경우 background-color의 적용범위 지정에 어려움이 생기오니 사용 부탁드립니다. 사용위치는 article 바로 아래입니다.*/
+
+#header {
+    width: 100%;
+    height: 60px;
+    padding: 0px 20px;
+    background-color: #947EC3;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*header-menu의 위치를 위한 position:relative입니다. 삭제x*/
+
+#header2 {
+    display: flex;
+    flex-flow: row;
+}
+
+#header2-2 {
+    margin: 0 0 0 10px;
+}
+
+#header2-2:hover {
+    cursor: pointer;
+}
+
+#header2-teacher {
+    display: none;
+}
+
+#header i {
+    font-size: 2.5rem;
+    margin: 0px 7px;
+}
+
+#article {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#article-menu {
+    width: 300px;
+    height: 100%;
+    background-color: #E0E0E0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#article-menu i {
+    margin: 10px 15px;
+}
+
+#article-menu-child,
+#header-menu-teacher {
+    text-align: center;
+}
+
+#article-menu-teacher {
+    display: none;
+}
+
+
+/* 사용색상 코드 : 92B4EC   #947EC3*/
+
+
+/*교사용 메뉴는 display: none 상태*/
