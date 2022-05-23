@@ -19,6 +19,7 @@
 	 <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
 	  	<!-- MyBatis 설정파일의 위치를 설정(src/main/resources)하여 설정값들을 가져오겠다. (classpath: 가 resources 폴더를 의미함 -->
 	  	<property name="configLocation" value="classpath:mybatis-config.xml" />
+	  	
 	  	<!-- 어떤 디비에 연결할건지 연결을 위한 도구를 참조 설정 -->
 	  	<property name="dataSource" ref="dataSource" />
 	 </bean>

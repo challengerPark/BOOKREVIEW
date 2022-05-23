@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface MemberService {
 
-	MemberVo login(HashMap<String, String> loginMap);
+	MemberVo loginMember(MemberVo m);
 
 }

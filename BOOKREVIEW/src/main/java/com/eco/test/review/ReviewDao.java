@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 
 public interface ReviewDao {
 
-	int insertReview(SqlSessionTemplate sqlSession);
+	int insertRevice(ReviewVo rv, SqlSessionTemplate sqlSession);
+
 
 }

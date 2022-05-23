@@ -6,13 +6,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ReviewDaoImpl implements ReviewDao {
 
-	
 	@Override
-	public int insertReview(SqlSessionTemplate sqlSession) {
-		return ;
+	public int insertRevice(ReviewVo rv, SqlSessionTemplate sqlSession) {
+		return 0;
 	}
 
-	
 	
 	
 }

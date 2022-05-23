@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+	window.addEventListener('DOMContentLoaded', function() {
     var user_Id = document.getElementById('user_id');
     var user_Pw = document.getElementById('user_pw');
     var login_Btn = document.getElementById('login_send');
@@ -58,8 +58,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     memberPwd: pw_Value
                 },
                 dataType: "json",
-                success: function(response) {
-                    alert("success!");
+                success: function(e) {
+                    console.log(e);
                 },
                 error: function() {
                     alert("오류발생");

@@ -2,7 +2,7 @@ package com.eco.test.review;
 
 public interface ReviewService {
 
-	int insertReview();
+	int insertReview(ReviewVo rv);
 
-	
+
 }

@@ -12,10 +12,11 @@ public class ReviewServiceImpl implements ReviewService {
 	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
+
 	@Override
-	public int insertReview() {
-		return reviewDao.insertReview(sqlSession);
+	public int insertReview(ReviewVo rv) {
+		return reviewDao.insertRevice(rv,sqlSession);
 	}
+	
 
 }
