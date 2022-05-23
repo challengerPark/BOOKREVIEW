@@ -11,8 +11,8 @@ public class MemberDaoImpl implements MemberDao{
 
 	
 	@Override
-	public MemberVo login(HashMap<String, String> loginMap, SqlSessionTemplate sqlSession) {
-		return sqlSession.selectOne("memberMapper.login",loginMap);
+	public MemberVo loginMember(MemberVo m, SqlSessionTemplate sqlSession) {
+		return sqlSession.selectOne("memberMapper.loginMember",m);
 	}
 	
 }

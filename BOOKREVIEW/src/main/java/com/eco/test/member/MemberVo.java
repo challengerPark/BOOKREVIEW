@@ -8,9 +8,9 @@ public class MemberVo {
 	private String memberId;
 	private String memberPwd;
 	private String memberName;
-	private String memberGrade;
-	private String memberClass;
-	private String memberClassNo;
+	private int memberGrade;
+	private int memberClass;
+	private int memberClassNo;
 	private String memberImg;
 	private int levelNo;
 	
@@ -18,8 +18,8 @@ public class MemberVo {
 		super();
 	}
 
-	public MemberVo(int memberNo, String memberId, String memberPwd, String memberName, String memberGrade,
-			String memberClass, String memberClassNo, String memberImg, int levelNo) {
+	public MemberVo(int memberNo, String memberId, String memberPwd, String memberName, int memberGrade,
+			int memberClass, int memberClassNo, String memberImg, int levelNo) {
 		super();
 		this.memberNo = memberNo;
 		this.memberId = memberId;
@@ -64,27 +64,27 @@ public class MemberVo {
 		this.memberName = memberName;
 	}
 
-	public String getMemberGrade() {
+	public int getMemberGrade() {
 		return memberGrade;
 	}
 
-	public void setMemberGrade(String memberGrade) {
+	public void setMemberGrade(int memberGrade) {
 		this.memberGrade = memberGrade;
 	}
 
-	public String getMemberClass() {
+	public int getMemberClass() {
 		return memberClass;
 	}
 
-	public void setMemberClass(String memberClass) {
+	public void setMemberClass(int memberClass) {
 		this.memberClass = memberClass;
 	}
 
-	public String getMemberClassNo() {
+	public int getMemberClassNo() {
 		return memberClassNo;
 	}
 
-	public void setMemberClassNo(String memberClassNo) {
+	public void setMemberClassNo(int memberClassNo) {
 		this.memberClassNo = memberClassNo;
 	}
 
@@ -110,6 +110,7 @@ public class MemberVo {
 				+ ", memberName=" + memberName + ", memberGrade=" + memberGrade + ", memberClass=" + memberClass
 				+ ", memberClassNo=" + memberClassNo + ", memberImg=" + memberImg + ", levelNo=" + levelNo + "]";
 	}
+	
 	
 	
 	

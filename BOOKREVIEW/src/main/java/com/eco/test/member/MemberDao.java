@@ -7,6 +7,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 
 public interface MemberDao {
 	
-	MemberVo login(HashMap<String, String> loginMap, SqlSessionTemplate sqlSession);
+	MemberVo loginMember(MemberVo m, SqlSessionTemplate sqlSession);
 
 }
