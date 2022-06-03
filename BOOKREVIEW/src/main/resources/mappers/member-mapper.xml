@@ -2,19 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberMapper">
 
-	 <resultMap type="member" id="memberResultSet">
-	 	<result column="MEMBER_NO" property="memberNo"/>
-		<result column="MEMBER_ID" property="memberId"/>
-		<result column="MEMBER_PWD" property="memberPwd"/>
-		<result column="MEMBER_NAME" property="memberName"/>
-		<result column="MEMBER_GRADE" property="memberGrade"/>
-		<result column="MEMBER_CLASS" property="memberClass"/>
-		<result column="MEMBER_CLASS_NO" property="memberClassNo"/>
-		<result column="MEMBER_IMG" property="memberImg"/>
-		<result column="LEVEL_NO" property="levelNo"/>
-	 </resultMap>
 	 
-	 <select id="loginMember" resultMap="memberResultSet">
+	 
+	 <select id="loginMember" resultType="member">
 	 	SELECT
 	 		  *
 	 	FROM 
@@ -24,6 +14,38 @@
 	    AND
 	    	  MEMBER_PWD = #{memberPwd}
 	 </select>
-
-
+	 
+	 <insert id="insertMember" parameterType="member">
+	 			INSERT INTO MEMBER( 
+							MEMBER_NO
+						   ,MEMBER_ID
+						   ,MEMBER_PWD
+						   ,MEMBER_NAME
+						   ,MEMBER_GRADE
+						   ,MEMBER_CLASS
+						   ,MEMBER_IMG
+						   ,LEVEL_NO
+						  )
+				   VALUES
+				   		  (
+				   		   null
+				   		  ,#{memberId}
+				   		  ,#{memberPwd}
+				   		  ,#{memberName}
+				   		  ,#{memberGrade}
+				   		  ,#{memberClass}
+				   		  ,default
+				   		  ,1
+				   		  ) 
+	 </insert>
+		
+	<select id="idCheck" resultType="_int">
+		SELECT
+			   COUNT(*)
+	     FROM
+	     	   MEMBER  
+	     WHERE 
+	           MEMBER_ID = #{checkId}
+	</select>
+	
 </mapper>

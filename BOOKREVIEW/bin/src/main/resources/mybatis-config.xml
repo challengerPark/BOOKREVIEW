@@ -7,13 +7,11 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.eco.test.book.BookVo" alias="book" />
 		<typeAlias type="com.eco.test.member.MemberVo" alias="member" />
 		<typeAlias type="com.eco.test.review.ReviewVo" alias="review" />
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="/mappers/book-mapper.xml" />
 		<mapper resource="/mappers/member-mapper.xml" />
 		<mapper resource="/mappers/review-mapper.xml" />
 	</mappers>

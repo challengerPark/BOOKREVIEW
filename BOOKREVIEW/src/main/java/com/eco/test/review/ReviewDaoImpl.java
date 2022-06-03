@@ -8,7 +8,7 @@ public class ReviewDaoImpl implements ReviewDao {
 
 	@Override
 	public int insertRevice(ReviewVo rv, SqlSessionTemplate sqlSession) {
-		return 0;
+		return sqlSession.insert("reviewMapper.insertReview",rv);
 	}
 
 	

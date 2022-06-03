@@ -1,7 +1,8 @@
-	window.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     var user_Id = document.getElementById('user_id');
     var user_Pw = document.getElementById('user_pw');
     var login_Btn = document.getElementById('login_send');
+
 
 
     login_Btn.addEventListener('click', function sending() {
@@ -20,7 +21,6 @@
         }
 
         function user_pw_fali() {
-            console.log(pw_warining);
             pw_warining.setAttribute("style", "display:inline-block;");
             pw_warining.setAttribute("class", "animate__animated animate__fadeInDown animate__delay-0.8s")
             user_Pw.setAttribute("class", "animate__animated animate__shakeX animate__delay-0.8s")
@@ -44,27 +44,8 @@
                 user_id_fali()
             }
         } else {
-            id_Value = user_Id.value;
-            pw_Value = user_Pw.value;
-
-            console.log(id_Value);
-            console.log(pw_Value);
-
-            $.ajax({
-                url: "login.me",
-                type: "post",
-                data: {
-                    memberId: id_Value,
-                    memberPwd: pw_Value
-                },
-                dataType: "json",
-                success: function(e) {
-                    console.log(e);
-                },
-                error: function() {
-                    alert("오류발생");
-                }
-            });
+        	login_Btn.setAttribute("form","login");
+        	$("#login_Btn").sumit();
         }
     })
 });

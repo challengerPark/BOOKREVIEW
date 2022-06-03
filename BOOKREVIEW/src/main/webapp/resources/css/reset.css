@@ -105,6 +105,11 @@ a {
     vertical-align: baseline;
     background: transparent;
     text-decoration: none;
+    color:#fff;
+}
+a:hover,a:active,a:visted,a:link{
+	text-decoration: none;
+    color:#fff;
 }
 
 img {

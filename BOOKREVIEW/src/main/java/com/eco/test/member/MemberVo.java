@@ -10,7 +10,6 @@ public class MemberVo {
 	private String memberName;
 	private int memberGrade;
 	private int memberClass;
-	private int memberClassNo;
 	private String memberImg;
 	private int levelNo;
 	
@@ -19,7 +18,7 @@ public class MemberVo {
 	}
 
 	public MemberVo(int memberNo, String memberId, String memberPwd, String memberName, int memberGrade,
-			int memberClass, int memberClassNo, String memberImg, int levelNo) {
+			int memberClass, String memberImg, int levelNo) {
 		super();
 		this.memberNo = memberNo;
 		this.memberId = memberId;
@@ -27,7 +26,6 @@ public class MemberVo {
 		this.memberName = memberName;
 		this.memberGrade = memberGrade;
 		this.memberClass = memberClass;
-		this.memberClassNo = memberClassNo;
 		this.memberImg = memberImg;
 		this.levelNo = levelNo;
 	}
@@ -80,14 +78,6 @@ public class MemberVo {
 		this.memberClass = memberClass;
 	}
 
-	public int getMemberClassNo() {
-		return memberClassNo;
-	}
-
-	public void setMemberClassNo(int memberClassNo) {
-		this.memberClassNo = memberClassNo;
-	}
-
 	public String getMemberImg() {
 		return memberImg;
 	}
@@ -108,8 +98,10 @@ public class MemberVo {
 	public String toString() {
 		return "MemberVo [memberNo=" + memberNo + ", memberId=" + memberId + ", memberPwd=" + memberPwd
 				+ ", memberName=" + memberName + ", memberGrade=" + memberGrade + ", memberClass=" + memberClass
-				+ ", memberClassNo=" + memberClassNo + ", memberImg=" + memberImg + ", levelNo=" + levelNo + "]";
+				+ ", memberImg=" + memberImg + ", levelNo=" + levelNo + "]";
 	}
+	
+	
 	
 	
 	
