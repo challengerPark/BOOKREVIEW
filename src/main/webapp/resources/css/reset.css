@@ -1,0 +1,129 @@
+﻿@charset "utf-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+em,
+img,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+thead,
+tfoot,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+/*background-color: #f7f7f7; 
+box-shadow: 2px 2px 20px rgb(0 0 0 / 6%), 2px 2px 10px rgb(0 0 0 / 4%)*/
+
+body {
+    line-height: 1;
+    color: #333;
+    background-color: #f7f7f7
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+nav ul,
+li {
+    list-style: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color:#fff;
+}
+a:hover,a:active,a:visted,a:link{
+	text-decoration: none;
+    color:#fff;
+}
+
+img {
+    vertical-align: top;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    outline: none;
+}

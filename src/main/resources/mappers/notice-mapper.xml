@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="noticeMapper">
+
+
+	<insert id="insertNotice" parameterType="notice">
+		INSERT INTO NOTICE
+					(
+					NOTICE_NO,
+					NOTICE_TITLE,
+					NOTICE_CONTENT,
+					CREATE_DATE
+					)
+			VALUES
+					(
+					NULL,
+					#{noticeTitle},
+					#{noticeContent},
+					now()
+					)
+	</insert>
+	<select id="listCount" resultType="_int">
+		SELECT 
+		       COUNT(*)
+	    FROM 
+	    	   NOTICE
+	</select>
+	<select id="selectNoticeList" resultType="notice">
+		SELECT LIST.* FROM
+		 (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, LIST1.* 
+		 			FROM (
+							SELECT
+						            *
+						       FROM 
+						            NOTICE
+						       ORDER BY NOTICE_NO DESC
+						       
+					 )
+					 LIST1 ,(SELECT @rownum:=0) TMP
+					)LIST
+					 WHERE ROWNUM BETWEEN #{startRow} AND #{endRow}	
+	</select>
+	<select id="selectNotice" resultType="notice">
+		SELECT 
+				*
+		FROM
+				NOTICE
+		WHERE 
+				NOTICE_NO = #{noticeNo}
+	
+	</select>
+	<delete id="deleteNotice" parameterType="notice">
+      DELETE   FROM 
+               NOTICE
+      WHERE 
+            NOTICE_NO = #{noticeNo}
+   </delete>
+	
+</mapper>

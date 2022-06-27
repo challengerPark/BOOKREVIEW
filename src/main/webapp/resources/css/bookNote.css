@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+#article{
+  background-color: #f7f7f7; height: auto !important;
+} 
+
+h2{
+  font-size: 3rem; margin: 30px 0px;
+}
+
+.notesubject{
+  width: 70px; margin: 0px 5px 0px 10px;
+  display: flex; flex-flow: row; justify-content: center; align-items: center;
+  background-color: #d5c4fa; border-radius: 10px;
+}
+.notedb{
+  width: 220px;
+  display: flex; flex-flow: row; justify-content: center; align-items: center;
+  border: 1px solid #999; border-radius: 3px;
+}
+#notedb_bookname{width: 525px !important;}
+
+.notesubject2{
+  width: 100%; margin: 20px 0px 5px 0px;
+  display: flex; flex-flow: row; justify-content: center; align-items: center;
+}
+
+#article_booknote{
+  width:900px; margin: 40px auto; padding:22px;
+  box-shadow: 2px 2px 20px rgb(0 0 0 / 6%), 2px 2px 10px rgb(0 0 0 / 4%);
+  display: flex; flex-flow: row wrap; justify-content: center; align-items: center;
+}
+
+#article_booknote > div {
+  width: 100%;
+}
+
+#booknote1{
+  display: flex; flex-flow: row; justify-content: space-between;
+}
+#booknote1-1 {
+  width: 200px;
+}
+#booknote1-1 img{
+  width: 180px;
+}
+#booknote1-2{
+  display: flex; flex-flow: column;
+}
+#booknote1-2 > div{
+  width: 630px; height: 50px; margin: 0px 0px 15px 0px;
+  display: flex;
+}
+
+#booknote2{
+  margin: 20px 0px 0px 0px;
+}
+
+input:focus {outline: none;}
+
+input[type=text]{
+  padding: 15px; font-size: 1.5rem; line-height: 2.5rem;
+}
+
+#booknote2 input[type=text]{
+  width: 100%; height: 50px; margin: 20px 0 0 0px;
+}
+#booknote4 input[type=text]{
+  width: 100%; height: 45px; margin: 5px 0px; 
+}
+
+textarea{
+  width: 100%; height: 140px; margin: 10px 0 30px 0px; padding: 5px 10px;
+  outline: none; resize: none; font-size: 1.5rem; line-height: 2.5rem;
+}
+
+#booknote8 textarea {
+  height: 300px; 
+}
+
+#booknote9{
+  display: flex; flex-flow: row; justify-content: center; align-items: center;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.btn1{
+  width: 110px; height: 40px; margin: 20px 50px 60px 0px;
+  color: #f7f7f7; background-color: rgba(243, 87, 87, 1);
+  border-radius: 5px; border:none; 
+}
+.btn2{
+  width: 110px; height: 40px; margin: 20px 0px 60px 0px;
+  color: #f7f7f7; background-color: #92B4EC;
+  border-radius: 5px; border:none; 
+}
+
+/*rgb(192, 192, 192)*/
