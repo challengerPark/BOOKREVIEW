@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+
+	 
+	 
+	 <select id="loginMember" resultType="member">
+	 	SELECT
+	 		  *
+	 	FROM 
+	 		  MEMBER
+	    WHERE
+	          MEMBER_ID = #{memberId}
+	    AND
+	    	  MEMBER_PWD = #{memberPwd}
+	 </select>
+	 
+	 <insert id="insertMember" parameterType="member">
+	 			INSERT INTO MEMBER( 
+							MEMBER_NO
+						   ,MEMBER_ID
+						   ,MEMBER_PWD
+						   ,MEMBER_NAME
+						   ,MEMBER_GRADE
+						   ,MEMBER_CLASS
+						   ,LEVEL_NO
+						  )
+				   VALUES
+				   		  (
+				   		   null
+				   		  ,#{memberId}
+				   		  ,#{memberPwd}
+				   		  ,#{memberName}
+				   		  ,#{memberGrade}
+				   		  ,#{memberClass}
+				   		  ,1
+				   		  ) 
+	 </insert>
+		
+	<select id="idCheck" resultType="_int">
+		SELECT
+			   COUNT(*)
+	     FROM
+	     	   MEMBER  
+	     WHERE 
+	           MEMBER_ID = #{checkId}
+	</select>
+	
+	<update id="changePwd" parameterType="member">
+	
+		UPDATE
+				MEMBER
+		   SET 
+		    	MEMBER_PWD = #{memberPwd}
+		 WHERE 
+		   	    MEMBER_NO = #{memberNo}
+	</update>
+	
+	<update id="changeInfo" parameterType="member">
+		UPDATE
+		       MEMBER
+		   SET
+			   MEMBER_IMG = #{memberImg}
+	     WHERE
+	           MEMBER_NO = #{memberNo}	
+	</update>
+	
+	<update id="updateTeacher" parameterType="member">
+		UPDATE
+				MEMBER
+		   SET 
+		   		MEMBER_GRADE = #{memberGrade},
+		   		MEMBER_CLASS = #{memberClass},
+		    	MEMBER_PWD = #{memberPwd}
+		 WHERE 
+		   	    MEMBER_NO = #{memberNo}
+	</update>
+	
+	<insert id="insertTeacher" parameterType="member">
+		INSERT INTO 
+					MEMBER
+					     (
+					      MEMBER_NO
+					     ,MEMBER_ID
+					     ,MEMBER_PWD
+					     ,MEMBER_NAME
+					     ,MEMBER_GRADE
+					     ,MEMBER_CLASS
+					     ,LEVEL_NO
+					     )
+				 VALUES(
+				 		 null
+				   		  ,#{memberId}
+				   		  ,#{memberPwd}
+				   		  ,#{memberName}
+				   		  ,#{memberGrade}
+				   		  ,#{memberClass}
+				   		  ,2
+				 		)
+	</insert>
+	
+	<select id="selectTeacherList" resultType="member">
+	   SELECT LIST.* FROM
+                (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, LIST1.* FROM (
+                     SELECT
+                              *
+                         FROM 
+                              MEMBER
+                        WHERE LEVEL_NO = 2
+                        ORDER BY MEMBER_GRADE ASC, MEMBER_CLASS ASC
+                )
+                LIST1 ,(SELECT @rownum:=0) TMP
+               )LIST
+                WHERE ROWNUM BETWEEN #{startRow} AND #{endRow} 
+	</select>
+	
+	<delete id="deleteTeacher" parameterType="member">
+		DELETE
+				FROM member
+		WHERE 
+				MEMBER_NO = #{memberNo}
+	</delete>
+	
+	<select id="countTeacher" resultType="_int">
+		SELECT
+				COUNT(*)
+		FROM 
+				MEMBER
+		WHERE
+		        LEVEL_NO = 2;
+	</select>	
+	
+		<select id="noticeTitles" resultType="notice">
+		SELECT 
+			  *
+	    FROM 
+	    	  NOTICE
+	</select>
+</mapper>

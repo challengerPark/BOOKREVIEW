@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewMapper">
+
+	<insert id="insertReview" parameterType="review">
+		INSERT INTO REVIEW
+			(
+			 REVIEW_NO,
+			 REVIEW_TITLE,
+			 REVIEW_IMPORTENT,
+			 REVIEW_CONTENT,
+			 REVIEW_FEEL,
+			 REVIEW_DATE,
+			 BOOK_IMG,
+			 BOOK_NAME,
+			 BOOK_WRITER,
+			 BOOK_COMPANY,
+			 CHECK_NO,
+			 MEMBER_NO
+			)
+		VALUES
+			(
+			 null,
+			 #{reviewTitle},
+			 #{reviewImportent},
+			 #{reviewContent},
+			 #{reviewFeel},
+			 now(),
+			 #{bookImg},
+			 #{bookName},
+			 #{bookWriter},
+			 #{bookCompany},
+			 1,
+			 #{memberNo}
+			)
+	
+	</insert>
+
+	<select id="getReviwList"  resultType="review">
+			SELECT 
+					*
+			 FROM 
+			 		REVIEW 
+			WHERE 
+					MEMBER_NO=#{userNo} 
+			order by 
+			        REVIEW_NO DESC
+	</select>
+	
+<select id="getNewImp" resultType="int">
+	
+	SELECT COUNT(CHECK_NO) FROM REVIEW WHERE MEMBER_NO=#{userNo} AND CHECK_NO!=1
+	    
+	   
+	</select>
+	<!-- 선생용 -->
+	<select id="getClassReviews"  parameterType="member"  resultType="listVo">
+		SELECT 
+				* 
+		  FROM 
+		  		REVIEW
+	 LEFT JOIN 
+		 		MEMBER ON REVIEW.MEMBER_NO = MEMBER.MEMBER_NO
+		 WHERE 
+		 		((DATE_FORMAT(REVIEW.REVIEW_DATE,'%Y') =  DATE_FORMAT(current_timestamp,'%Y'))
+		    AND (MEMBER.MEMBER_GRADE = #{memberGrade}
+		    AND MEMBER.MEMBER_CLASS = #{memberClass}))
+		    AND REVIEW.CHECK_NO!="2" ORDER BY REVIEW_DATE DESC
+	</select>
+	
+	<select id="changeReviewForm" parameterType="review" resultType="review">
+		SELECT 
+			   *
+		  FROM
+		       REVIEW
+        WHERE REVIEW_NO = #{reviewNo}
+	</select>
+	
+	<update id="changeReview" parameterType="review">
+		UPDATE
+			    REVIEW
+	       SET
+		        REVIEW_TITLE = #{reviewTitle}
+			   ,REVIEW_IMPORTENT = #{reviewImportent}
+			   ,REVIEW_CONTENT = #{reviewContent}
+			   ,REVIEW_FEEL = #{reviewFeel}
+		       ,REVIEW_DATE = now()
+		WHERE 
+				REVIEW_NO = #{reviewNo}
+	</update>
+	
+	<select id="listCount" parameterType="_int" resultType="_int">
+		SELECT 
+		        COUNT(*)
+		 FROM 
+		 		REVIEW
+		 WHERE
+		 		MEMBER_NO = #{memberNo}
+		<choose>
+			<when test="checkNo == 0">
+				and CHECK_NO > 0
+			</when>
+		    <when test="checkNo == 1">
+			    and CHECK_NO = 1
+			</when>
+			<when test="checkNo == 2">
+			and CHECK_NO = 2
+			</when>
+			<otherwise>
+			and CHECK_NO = 3
+			</otherwise>
+			</choose>
+	</select>
+
+	<select id="studentList" parameterType="map" resultType="listVo">
+		SELECT LIST.* FROM
+					 (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, LIST1.* FROM (
+							SELECT
+						            *
+						       FROM 
+						            REVIEW
+						      LEFT JOIN 
+						             MEMBER USING(MEMBER_NO)
+						      WHERE MEMBER_NO = #{memberNo} 
+						       <choose>
+						       	   <when test="checkNo == 0">
+						       	   		  and CHECK_NO > 0
+						       	   </when>
+						           <when test="checkNo == 1">
+						                  and CHECK_NO = 1
+						           </when>
+						           <when test="checkNo == 2">
+						                  and CHECK_NO = 2
+						           </when>
+						           <otherwise>
+						                  and CHECK_NO = 3
+						           </otherwise>
+						       </choose>
+						       ORDER By REVIEW_NO DESC
+					 )
+					 LIST1 ,(SELECT @rownum:=0) TMP
+					)LIST
+					 WHERE ROWNUM BETWEEN #{startRow} AND #{endRow}	
+					 
+	</select>
+	<select id="getReviewCntT" resultType="_int">
+				SELECT COUNT(*) 
+				FROM REVIEW R 
+				LEFT JOIN MEMBER M ON  R.MEMBER_NO = M.MEMBER_NO  
+				WHERE DATE_FORMAT(R.REVIEW_DATE,'%Y') = DATE_FORMAT(current_timestamp,'%Y')
+				 AND MEMBER_GRADE=#{memberGrade} AND MEMBER_CLASS=#{memberClass}
+				 <choose>
+					<when test="checkNo == 0">
+						and R.CHECK_NO > 0
+							</when>
+					<when test="checkNo == 1">
+						and R.CHECK_NO = 1
+					</when>
+					<when test="checkNo == 2">
+						and R.CHECK_NO = 2
+					</when>
+					<otherwise>
+						and R.CHECK_NO = 3
+					</otherwise>
+				</choose>
+				
+	</select>
+	
+	<select  id="getReviewListT" parameterType="map" resultType="listVo">
+			SELECT TEST2.* FROM
+				 (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, TEST.* FROM (
+				 SELECT TEST1.* FROM (
+				 SELECT R.*,M.MEMBER_NAME AS MEMBER_NAME ,M.MEMBER_GRADE AS MEMBER_GREADE ,M.MEMBER_CLASS AS MEMBER_CLASS  FROM REVIEW R  LEFT JOIN MEMBER M  ON  R.MEMBER_NO = M.MEMBER_NO   
+				 WHERE (DATE_FORMAT(R.REVIEW_DATE,'%Y') = DATE_FORMAT(current_timestamp,'%Y')) AND MEMBER_GRADE=#{memberGrade} AND MEMBER_CLASS=#{memberClass}
+				<choose>
+					<when test="checkNo == 0">
+						and CHECK_NO > 0
+					</when>
+				    <when test="checkNo == 1">
+						and CHECK_NO = 1
+					</when>
+					<when test="checkNo == 2">
+						and CHECK_NO = 2
+					</when>
+					<otherwise>
+						and CHECK_NO = 3
+					</otherwise>
+				</choose> 
+				ORDER By REVIEW_DATE DESC
+				) TEST1 
+				 )
+				 TEST ,(SELECT @rownum:=0) TMP
+				)TEST2
+				 WHERE ROWNUM BETWEEN #{startRow} AND #{endRow}	
+	 </select>
+	 
+	 
+	 		<!-- 선생+학생용  독서록 디테일 0623test-->  
+	<select id="getDetail"  resultType="listVo">
+	SELECT * FROM REVIEW R LEFT JOIN MEMBER M ON R.MEMBER_NO=M.MEMBER_NO WHERE  R.REVIEW_NO=#{reviewNo}
+	</select>
+	
+	
+
+	
+	
+	<update id="teacherUpdate" >
+		UPDATE REVIEW   SET CHECK_NO=#{checkNo}  WHERE REVIEW_NO=#{reviewNo}
+	</update>
+	
+	<!-- 선생용 메인화면 새소식 이상민 -->
+	<select id="getClassReviewsCount" parameterType="member"
+		resultType="int">
+		SELECT
+		count(*)
+		FROM
+		REVIEW
+		LEFT JOIN
+		MEMBER ON REVIEW.MEMBER_NO = MEMBER.MEMBER_NO
+		WHERE
+		((DATE_FORMAT(REVIEW.REVIEW_DATE,'%Y') = DATE_FORMAT(current_timestamp,'%Y'))
+		AND (MEMBER.MEMBER_GRADE = #{memberGrade}
+		AND MEMBER.MEMBER_CLASS = #{memberClass}))
+		AND REVIEW.CHECK_NO=1 ORDER BY REVIEW_DATE DESC
+	</select>
+	
+	
+	
+</mapper>

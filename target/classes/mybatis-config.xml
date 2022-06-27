@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.eco.test.member.MemberVo" alias="member" />
+		<typeAlias type="com.eco.test.review.ReviewVo" alias="review" />
+		<typeAlias type="com.eco.test.list.ListVo" alias="listVo" />
+		<typeAlias type="com.eco.test.notice.NoticeVo" alias="notice" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="/mappers/member-mapper.xml" />
+		<mapper resource="/mappers/review-mapper.xml" />
+		<mapper resource="/mappers/notice-mapper.xml" />
+	</mappers>
+	
+</configuration>
+	
+	
