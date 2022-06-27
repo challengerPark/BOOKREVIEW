@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 
 <head>
@@ -42,10 +43,6 @@
                         비밀번호
                     </label>
                     <small id="pw_warining">비밀번호를 확인해주세요.</small>
-	                    <c:if test="${loginMiss eq 1}">
-	                    	<c:remove var="loginMiss" scope="session" />
-							<p style="color:red;margin:5px;" >아이디 또는 비밀번호를 잘못 입력했습니다.</p>
-						</c:if>
                     <input style="text-transform: lowercase;" onkeyup="chkCharCode(event)" maxlength='20' id="user_pw" name="memberPwd"type="password">
                 </form>
 
@@ -61,6 +58,9 @@
 	
 	
 <script>
+
+let login_State = '<c:out value="${loginMiss}"/>';
+<c:remove var="loginMiss" scope="session" />;
         function chkCharCode(event) {
             const regExp = /[^0-9a-zA-Z]/g;
             const ele = event.target;

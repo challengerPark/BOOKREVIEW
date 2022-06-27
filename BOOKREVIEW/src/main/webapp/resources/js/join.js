@@ -33,7 +33,7 @@ window.onload = function() {
                 joinArticle3.style.display = "none";
             }
         };
-
+        /*아이디 중복 체크*/
         idcheck_Btn.onclick = function() {
             id_same.style.display = "none";
             
@@ -61,6 +61,8 @@ window.onload = function() {
 
         };
 
+        
+        /*비밀번호 재확인 실시간 체크*/
         $("#pwRecheck").keyup(function() {
             if (pwCheck.value !== pwRecheck.value) {
                 pwd_same.style.display = "block";

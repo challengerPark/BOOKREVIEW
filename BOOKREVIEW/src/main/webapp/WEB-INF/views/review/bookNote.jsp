@@ -26,67 +26,27 @@
 </head>
 
 <body>
-  <div id="wrap">
-    <div id="header">
-      <a href="test_main1"><div id="header1">
+<div id="header">
+    <div id="header1">
+       <a href="mainForStudent.me">
         <h1>BookLi</h1>
-      </div></a>
+        </a>
+      </div>
 
-      <div id="header2">
+     <div id="header2">
         <div id="header2-child">
-          <a href="test_main1"><i class="fas fa-home" id="headericon-home"></i></a>
-          <a href="#"><i class="fas fa-user-alt" id="headericon-user"></i></a>
-          <a href="#"><i class="fas fa-book" id="headericon-book"></i></a>
-          <a href="test_bookSearch"><i class="fas fa-search" id="headericon-search"></i></a>
-        </div> <!--학생용 상단메뉴바-->
-
-        <div id="header2-teacher">
-          <a href="#"><i class="fas fa-home" id="headericon-home2"></i></a>
-          <a href="#"><i class="fas fa-user-alt" id="headericon-user2"></i></a>
-          <a href="#"><i class="fas fa-book" id="headericon-book2"></i></a>
-        </div>  <!--교사용 상단메뉴바 display:none-->
-
-        <div id="header2-2">
-          <i class="fas fa-bars"></i>
-        </div>
+          <a href="mainForStudent.me"><i class="fas fa-home" id="headericon-home"></i></a>
+          <a href="studentReviewList.re"><i class="fas fa-book" id="headericon-book"></i></a>
+          <a href="bookSearch"><i class="fas fa-search" id="headericon-search"></i></a>
+          <a href="logout.me"><i class="fas fa-door-open"></i></a>
+        </div> <!--학생용 상단메뉴바--> 
       </div>
     </div>  <!--header END-->
 
+
+  <div id="wrap">
     <article id="article">
       <div class="innerwrap">
-
-        <div id="article-menu">
-          <div id="article-menu-child">
-            <a href="test_main1"><p class="fontstyle4" id="icon-home">
-              홈
-            </p></a>
-            <a href="#"><p class="fontstyle4" id="icon-mypage">
-              마이페이지
-            </p></a>
-            <a href="#"><p class="fontstyle4" id="icon-booknote">
-              독서록 일지
-            </p></a>
-            <a href="test_bookSearch"><p class="fontstyle4" id="icon-search">
-              독서 검색
-            </p></a>
-          </div>
-
-          <div id="article-menu-teacher">
-            <a href="#"><p class="fontstyle4" id="icon-home2">
-              홈
-            </p></a>
-            <a href="#"><p class="fontstyle4" id="icon-mypage2">
-              마이페이지
-            </p></a>
-            <a href="#"><p class="fontstyle4" id="icon-booknote2">
-              독서록 일지
-            </p></a>
-            <a href="#"><p class="fontstyle4" id="icon-search2">
-              독서 검색
-            </p></a>
-          </div>  <!--display:none-->
-        </div>  <!--header-menu END-->  
-
           <div id="article_booknote">
 
               <h2>독 서 록</h2>
@@ -176,9 +136,9 @@
               </div>
 
               <div id="booknote9">
-                <a href="bookSearch.html"><button class="btn1">작성취소</button></a>
+                <a href="bookSearch"><button class="btn1">작성취소</button></a>
 
-                <a href="#"><button class="btn2" onclick='submitnote()'>제출하기</button></a>
+                <button class="btn2" onclick='submitnote()'>제출하기</button>
               </div>
 
           </div> <!--aticle본문용 div입니다-->

@@ -11,6 +11,23 @@ public class ReviewDaoImpl implements ReviewDao {
 		return sqlSession.insert("reviewMapper.insertReview",rv);
 	}
 
+
+
+	@Override
+	public ReviewVo changeReviewForm(int reviewNo ,SqlSessionTemplate sqlSession) {
+		return sqlSession.selectOne("reviewMapper.changeReviewForm",reviewNo);
+	}
+
+
+
+	@Override
+	public int changeReview(ReviewVo rv, SqlSessionTemplate sqlSession) {
+		return sqlSession.update("reviewMapper.changeReview", rv);
+	}
+
+
+
+
 	
 	
 }

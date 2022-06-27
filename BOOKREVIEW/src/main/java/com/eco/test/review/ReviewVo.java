@@ -1,6 +1,6 @@
 package com.eco.test.review;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ReviewVo {
 
@@ -16,6 +16,7 @@ public class ReviewVo {
 	private String bookCompany;
 	private int checkNo;
 	private int memberNo;
+	
 	public ReviewVo() {
 		super();
 	}

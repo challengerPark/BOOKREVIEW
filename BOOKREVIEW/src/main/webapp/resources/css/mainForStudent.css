@@ -1,19 +1,23 @@
 @charset "utf-8";
 
+#wrap {min-width: 1200px;}
+
+#article{
+  background:#a39cbb;
+}
+
 .innerwrap{
-  width: 100%; max-width:none; padding: 0px 10em; margin: 0 auto;;
+ padding: 0px 10em; margin: 0 auto;
 } 
 
 
 .fontstylebook{
-  font-size: 80px; color: #947EC3; z-index: 100;
+  font-size: 0.95rem; color: #947EC3; z-index: 100;
 }
 
 
 #article1-1 {
-  width: 20%;
-  min-width:300px;
-
+  min-width:20%;
   height: 700px;
   padding: 20px 0px;
   background-color: #ededed;
@@ -21,30 +25,34 @@
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
+  box-shadow:4px 12px 30px 6px rgb(0 0 0 / 9%);
 }
 
 #article1-2 {
-  width: 42%;
-  min-width: 390px;
-
+  min-width:40%;
   height: 700px;
+  margin: 0px 30px;
   padding: 20px 0px;
   background-color: #ededed;
   display: flex;
   flex-flow: column;
   align-items: center;
+  box-shadow:4px 12px 30px 6px rgb(0 0 0 / 9%);
 }
 
 #article1-3 {
-  width: 27%;
-  min-width: 390px;
-
+  min-width: 25%;
   height: 700px;
   padding: 20px 0px;
   display: flex;
   flex-flow: column;
   align-items: center;
   background-color: #ededed;
+  box-shadow:4px 12px 30px 6px rgb(0 0 0 / 9%);
+}
+
+#article1-1,#article1-2,#article1-3{
+	transition:all 0.3s ease ;
 }
 
 
@@ -58,15 +66,15 @@
   font-size: 1.8rem;
   color: #202020;
   margin: 0px 0px 20px 0px;
+  cursor:pointer;
 }
 
 .fontstyle8 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  font-weight:600;
   line-height: 3.8rem;
   color: #202020;
   margin: 10px 0px 20px 0px;
-  border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
   text-align: center;
 }
 
@@ -77,34 +85,46 @@
 }
 
 .fontstyle12 {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #202020;
   margin: 0 0 10px 0px;
 }
 
 .fontstyle13 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #999;
+  margin: 0 0 5px 0px;
+}
+
+.fontstyleOpcity0 {
+  font-size: 1.3rem;
   color: #202020;
-  margin: 0 0 10px 0px;
+  margin: 0 0 5px 0px;
+  display:none;
 }
 
 
+
 #article1 {
-  width: 100%;
+  min-width: 1200px;
   height: auto;
   margin: 70px 0px;
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+}
+
+#article1> div{
+  border-radius:75px;
+}
+
+#article1> div:hover{
+	  box-shadow:4px 12px 20px 6px rgba(0,0,0,.30);
 }
 
 
 #article1-1-1 {
-  background-color: #f7f7f7;
-  width: 85%;
+  width: 265px;
   height: 130px;
-  border-radius: 10px;
   display: flex;
   flex-flow: row;
 }
@@ -133,10 +153,6 @@
 
 #article1-1-1-1>div:hover {
   border: 3px solid #505add;
-}
-
-#article1-1-1-1>div:hover {
-  cursor: pointer;
 }
 
 #article1-1-1-1 i {
@@ -170,55 +186,73 @@
 
 
 #article1-2>div {
-  width: 90%;
-  margin: 0 0 25px 0px;
+  width: 95%;
 }
 
 #article1-2-1 {
   text-align: center;
 }
 
+.goReviewlist{
+	float: right;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
 #article1-2-2 {
-  height: 500px; height: 340px; margin: 20px 0px 30px 0px !important;
+  width: 500px; height: 340px; margin: 20px 0px 30px 0px !important;
   border-radius: 5px;
-  display: flex; flex-flow: row; justify-content: space-evenly; align-items: center;  background-color: #d5c4fa ;
+  display: flex; flex-flow: row; justify-content: space-evenly; align-items: center;
   text-align: center;
 }
 /*부드러운 색: #d5c4fa,  진한 색 #947EC3*/
 
-
-
-.article1-2-2-1-2 >p {
-  margin: 0 0 5px 0px;
+.card-inner{
+	width: 200px;
+    height: 300px;
+    overflow:hidden;
+    border-radius:14px;
+    background: #F3904F;
+	background: linear-gradient(to top, #F3904F, #3B4371);
+    
 }
 
-.article1-2-2-1 {
-  width: 170px; height: 170px; 
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f7f7f7;
-  border-radius: 70%;
+
+.book-thumbnail{
+	overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: 10px auto;
+    background: rgba(255,255,255,0.5);
 }
 
-.article1-2-2-1:hover{
-border: 3px solid #947EC3;
+.my-Book{
+	margin-top: 44px;
 }
 
-.article1-2-2-1-2 {
-  width: 30%;
+
+.book-info{
+   display: flex;
+    height: 140px;
+    padding: 0 20px;
+    border-radius: 25px 25px 0 0;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.article1-2-2-1 img {
-  width: 50px; margin: 15px 0 0 0px;
+.bookTitle{
+	font-size:1.35rem;
 }
 
-.article1-2-2-1-2 {
-  width: 70%;
-  height: 145px;
-  padding: 7px;
+.bookWiter{
+	font-size:1.2rem;
 }
+
+
 
 #article1-2-3 button {
   width: 100%;
@@ -228,35 +262,41 @@ border: 3px solid #947EC3;
   border-radius: 10px;
   margin: 40px 0 0 0px;
   color: #f7f7f7;
+  font-weight:600;
 }
 
-
-#article1-3-1,
-#article1-3-2 {
-  width: 90%;
-  height: 270px;
-}
 
 #article1-3-1 {
-  margin: 0 0 60px 0px;
+  margin: 0 0 40px 0px;
+  width: 340px;
+  height: 280px;
+  overflow: hidden;
+}
+
+#article1-3-2 {
+  width: 340px;
+  margin: 0px 20px;
+  overflow: hidden;
 }
 
 #article1-3-2-1 {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .articleBook {
   width: 100px;
+  height: 315px;
+  float: left;
+  margin: 0 6px;
 }
 
 .articleBook img {
-  width: 100px;
+  width: 100px; height:148px;
   margin: 10px 0px;
 }
-
-
 
 
 #article1-3-1 .fontstyle9,
@@ -265,5 +305,15 @@ border: 3px solid #947EC3;
 .articleBook{
   cursor: pointer;
 }
+
+input[type=password] {
+    margin: 0 0 10px 0px;
+    padding: 12px;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+}
+
+
+
 
 /*더미 링크용 포인터 변경*/

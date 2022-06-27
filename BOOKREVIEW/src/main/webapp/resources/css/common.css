@@ -10,6 +10,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
+    user-select:none
 }
 
 li,
@@ -35,6 +36,7 @@ h1 {
     color: #dfa25f;
     font-family: 'Great Vibes', cursive;
     letter-spacing: 3px;
+    font-weight:800!important;
 }
 
 
@@ -82,9 +84,7 @@ h1 {
 
 .innerwrap {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    ;
 }
 
 
@@ -94,7 +94,7 @@ h1 {
     width: 100%;
     height: 65px;
     padding: 7px 20px;
-    background-color: #947EC3;
+    background-color: #2e3c50;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -124,6 +124,7 @@ h1 {
 #header i {
     font-size: 2.5rem;
     margin: 0px 7px;
+    color:#fff;
 }
 
 #article {
@@ -158,3 +159,11 @@ h1 {
 
 
 /*교사용 메뉴는 display: none 상태*/
+
+@media screen (min-width: 1200px) {
+	
+	.innerwrap{
+ 	width:1600px;
+} 
+ 
+}

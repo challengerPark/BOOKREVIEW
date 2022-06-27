@@ -15,16 +15,17 @@
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
+ 	<script src="resources/js/join.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="wrap">
-        <a href="#">
-            <div class="logo">
-                <h1>Alpas</h1>
-            </div>
+    <div class="logo">
+        <a href="index">
+          <h1>Alpas</h1>
         </a>
+    </div>
 
         <article>
             <div id="article1-1">
@@ -167,9 +168,7 @@
                 ele.value = ele.value.replace(regExp, '');
             }
         };
-    </script>
-    <script src="resources/js/join.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    </script>   
 </body>
 
 </html>

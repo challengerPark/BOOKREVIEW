@@ -17,6 +17,16 @@ public class ReviewServiceImpl implements ReviewService {
 	public int insertReview(ReviewVo rv) {
 		return reviewDao.insertRevice(rv,sqlSession);
 	}
-	
+
+	@Override
+	public ReviewVo changeReviewForm(int reviewNo) {
+		return reviewDao.changeReviewForm(reviewNo, sqlSession);
+	}
+
+	@Override
+	public int changeReview(ReviewVo rv) {
+		return reviewDao.changeReview(rv, sqlSession);
+	}
+
 
 }

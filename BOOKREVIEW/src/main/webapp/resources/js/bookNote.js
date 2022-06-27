@@ -19,13 +19,13 @@ function submitnote() {
 
 
   //이하는 백단으로 데이터 넘기는 내용
-  let bookThumnail= document.getElementById("bookThumnail").src;
-  let booktitle= localStorage.getItem('yourbook');
-  let uploaddate= localStorage.getItem('testdate');
-  let bookauthor= localStorage.getItem('testauthor');
+  let bookThumnail= sessionStorage.getItem('selectbookimg');
+  let booktitle= sessionStorage.getItem('selectbooktitle');
+  let uploaddate= sessionStorage.getItem('testdate');
+  let bookauthor= sessionStorage.getItem('selectbookauthor');
   let userinform= document.getElementById("userinform").innerText;
   
-  let bookcompany= localStorage.getItem('testcompany'); 
+  let bookcompany= sessionStorage.getItem('selectbookpublisher'); 
   //종혁씨 요청으로 추가
 
 
@@ -44,9 +44,10 @@ function submitnote() {
   let noteSynop = document.getElementById("noteSynop").value;
   let noteFree = document.getElementById("noteFree").value;
 
-  let reviewimportantAll = reviewimportant1+","+reviewimportant2+","+reviewimportant3+","+reviewimportant4+","+reviewimportant5
+  let reviewimportantAll = reviewimportant1+","+reviewimportant2+","+reviewimportant3+","+reviewimportant4+","+reviewimportant5;
+
   $.ajax({
-    url: "insertReview",
+    url: "insertReview.re",
     type: "POST",
     data: {
       reviewTitle: reviewtitle,    //리뷰제목
@@ -60,11 +61,11 @@ function submitnote() {
       bookCompany: bookcompany
     },
     success: function (data) {
-        alert("저장했습니다.");
-        if(!data==""){location.replace('test_main1')};
-     },
+      alert("저장했습니다.");
+      if(!data==""){location.replace('mainForStudent.me')};
+    },
     error: function () {
-      alert("모든 내용을 입력하세요.")
+      alert("통신에 실패하였습니다.");
     }
   });
 

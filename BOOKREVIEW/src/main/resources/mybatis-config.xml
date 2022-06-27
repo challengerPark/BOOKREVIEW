@@ -10,11 +10,14 @@
 	<typeAliases>
 		<typeAlias type="com.eco.test.member.MemberVo" alias="member" />
 		<typeAlias type="com.eco.test.review.ReviewVo" alias="review" />
+		<typeAlias type="com.eco.test.list.ListVo" alias="listVo" />
+		<typeAlias type="com.eco.test.notice.NoticeVo" alias="notice" />
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="/mappers/member-mapper.xml" />
 		<mapper resource="/mappers/review-mapper.xml" />
+		<mapper resource="/mappers/notice-mapper.xml" />
 	</mappers>
 	
 </configuration>
